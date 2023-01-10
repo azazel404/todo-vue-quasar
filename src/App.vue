@@ -5,7 +5,7 @@
                 <q-btn flat dense round @click="leftDrawerOpen = !leftDrawerOpen" aria-label="Menu" icon="menu" />
             </q-toolbar>
             <div class="q-px-lg q-pt-xl q-mb-md">
-                <div class="text-h3">Todo</div>
+                <!-- <div class="text-h3">Todo</div> -->
                 <div class="text-subtitle1">{{ todaysDate }}</div>
             </div>
             <q-img src="./statics/background.jpg" alt="image-background" class="header-image absolute-top" />
@@ -34,7 +34,8 @@
         </q-drawer>
 
         <q-page-container>
-            <TodoView />
+            <router-view>
+            </router-view>
         </q-page-container>
     </q-layout>
 </template>
@@ -42,13 +43,9 @@
 <script>
 import { computed, ref } from 'vue'
 import {date} from "quasar";
-import TodoView from "@/pages/Todo"
 
 export default {
     name: 'LayoutDefault',
-    components : {
-        TodoView
-    },
     setup() {
 
          // a computed ref
